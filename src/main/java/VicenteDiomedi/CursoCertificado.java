@@ -9,6 +9,7 @@ public class CursoCertificado extends Curso implements ConDiploma {
         super(codigoCurso, duracion, cupoMaximo);
         this.entidadCertificadora = entidadCertificadora;
         this.evaluacionAlDia = evaluacionAlDia;
+        this.diplomaEmitido = diplomaEmitido;
     }
     public String getEntidadCertificadora() {
         return entidadCertificadora;
@@ -30,13 +31,13 @@ public class CursoCertificado extends Curso implements ConDiploma {
     }
     @Override
     public double calcularCoste(){
-        int costeBase = 85000;
+        double costeBase = 85000.0;
         if(!this.evaluacionAlDia){
             return (costeBase + (costeBase * 0.2));
         }
         return costeBase;}
     @Override
-    public void EmitirDiploma(){
+    public void emitirDiploma(){
         this.diplomaEmitido = true;
     }
     @Override
@@ -49,7 +50,7 @@ public class CursoCertificado extends Curso implements ConDiploma {
         detalleCurso += super.detalleCurso();
         detalleCurso += "| Entidad Certificadora: " + this.entidadCertificadora ;
         if(this.evaluacionAlDia){
-            detalleCurso += "| Evaluacion Al Dia: No";
+            detalleCurso += "| Evaluacion Al Dia: Si";
             if(this.diplomaEmitido){
                 detalleCurso += "| Diploma Emitido: Si" + "| Coste: " + calcularCoste();
             }else{
@@ -57,7 +58,7 @@ public class CursoCertificado extends Curso implements ConDiploma {
             }
             return detalleCurso;
         } else {
-            detalleCurso += "| Evaluacion Al Dia: Si";
+            detalleCurso += "| Evaluacion Al Dia: No";
             if(this.diplomaEmitido){
                 detalleCurso += "| Diploma Emitido: Si" + "| Coste: " + calcularCoste();
             }else{

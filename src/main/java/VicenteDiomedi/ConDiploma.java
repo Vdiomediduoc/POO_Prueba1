@@ -4,5 +4,5 @@ public interface ConDiploma {
 
     public boolean estaEmitido();
 
-    public void EmitirDiploma();
+    public void emitirDiploma();
 }

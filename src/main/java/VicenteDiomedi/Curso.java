@@ -6,9 +6,9 @@ public abstract class Curso {
     protected int cupoMaximo;
 
     public Curso(String codigoCurso, int duracion, int cupoMaximo) {
-        this.codigoCurso = codigoCurso;
-        this.duracion = duracion;
-        this.cupoMaximo = cupoMaximo;
+        this.setCodigoCurso(codigoCurso);
+        this.setDuracion(duracion);
+        this.setCupoMaximo(cupoMaximo);
     }
     public String getCodigoCurso() {
         return codigoCurso;
@@ -31,8 +31,8 @@ public abstract class Curso {
         return cupoMaximo;
     }
     public void setCupoMaximo(int cupoMaximo) throws IllegalArgumentException {
-        if (cupoMaximo < 0) {
-            throw new IllegalArgumentException("Cupo maximo no puede ser negativo");
+        if (cupoMaximo <= 0) {
+            throw new IllegalArgumentException("Cupo maximo debe ser un numero positivo");
         }
         this.cupoMaximo = cupoMaximo;
     }

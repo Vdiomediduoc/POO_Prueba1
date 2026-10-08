@@ -12,7 +12,7 @@ public class GestorCapacitacion {
     public void setCursos(ArrayList<Curso> cursos) {
         this.cursos = cursos;
     }
-    public void RegistrarCurso(Curso curso) {
+    public void registrarCurso(Curso curso) {
         cursos.add(curso);
         if(curso instanceof  CursoLibre){
             System.out.println(curso.getCodigoCurso() + " (Curso libre) registrado Correctamente");

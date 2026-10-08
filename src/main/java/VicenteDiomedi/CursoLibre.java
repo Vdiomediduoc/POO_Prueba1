@@ -14,7 +14,7 @@ public class CursoLibre extends Curso{
     }
     @Override
     public double calcularCoste(){
-        int costeBase = 45000;
+        double costeBase = 45000.0;
         if(this.cantidadIncritos > 20){
             return (costeBase + (costeBase * 0.1));
         }
